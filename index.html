@@ -4,13 +4,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-    <meta name="description" content="Cabaña de Tarzán - Tu refugio natural en Arucas, Gran Canaria. Alojamiento único rodeado de naturaleza.">
+    <meta name="description"
+        content="Cabaña de Tarzán - Tu refugio natural en Arucas, Gran Canaria. Alojamiento único rodeado de naturaleza.">
     <meta name="theme-color" content="#2e4f24">
-    <title>Cabaña de Tarzán - Arucas, Gran Canaria</title>
+    <title>Cabaña de Tarzán -Alquiler Arucas, Gran Canaria</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-    
+
     <link rel="stylesheet" href="estilo.css">
 </head>
 </head>
@@ -27,7 +28,7 @@
                         Nosotros</a></li>
                 <li><a href="#galeria" data-es="Galería" data-en="Gallery" data-fr="Galerie">Galería</a></li>
                 <li><a href="#servicios" data-es="Servicios" data-en="Services" data-fr="Services">Servicios</a></li>
-              
+
 
             </ul>
             <div class="selector-idioma">
@@ -120,7 +121,7 @@ Notre objectif est que vous vous sentiez bien dès votre arrivée, en vous offra
                 </div>
 
                 <div class="gallery-item">
-                    <img src="imagines/1.avif" alt="" >
+                    <img src="imagines/1.avif" alt="">
                 </div>
                 <div class="gallery-item">
                     <img src="imagines/2.avif" alt="">
@@ -210,27 +211,55 @@ Notre objectif est que vous vous sentiez bien dès votre arrivée, en vous offra
                         <li data-es="Agua caliente 24h" data-en="24h hot water" data-fr="Eau chaude 24h">Agua caliente
                             24h
                         </li>
-                        
+
                     </ul>
                 </div>
             </div>
         </section>
-       
+        <section id="reserva">
+            <h2 data-es="Haz tu Reserva" data-en="Make Your Reservation" data-fr="Faites Votre Réservation">Haz tu
+                Reserva
+            </h2>
+            <form id="formReserva" action="https://formspree.io/f/xjkjgnzp" method="post" name="cabaña de tárzan"
+                class="formulario-reserva">
+                <label>Nombre completo:</label>
+                <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required>
+
+                <label>Correo electrónico:</label>
+                <input type="email" id="correo" name="email" placeholder="tuemail@ejemplo.com" required>
+
+                <label>Teléfono:</label>
+                <input type="tel" id="telefono" name="telefono" placeholder="+34 600 000 000" required>
+
+                <label>Fecha de llegada:</label>
+                <input type="date" id="entrada" name="date" required>
+
+                <label>Fecha de salida:</label>
+                <input type="date" id="salida" name="date" required>
+
+                <label>Número de personas:</label>
+                <select id="personas" required>
+                    <option value="">Selecciona</option>
+                    <option value="1">1 persona</option>
+                    <option value="2">2 personas</option>
+                </select>
+
+
     </main>
 
     <footer>
-        <p data-es="© 2024 Cabaña de Tarzán - Arucas, Gran Canaria. Todos los derechos reservados."
-            data-en="© 2024 Tarzan's Cabin - Arucas, Gran Canaria. All rights reserved."
-            data-fr="© 2024 Cabane de Tarzan - Arucas, Grande Canarie. Tous droits réservés.">
+        <p data-es="© 2025 Cabaña de Tarzán - Arucas, Gran Canaria. Todos los derechos reservados."
+            data-en="© 2025 Tarzan's Cabin - Arucas, Gran Canaria. All rights reserved."
+            data-fr="© 2025 Cabane de Tarzan - Arucas, Grande Canarie. Tous droits réservés.">
             © 2024 Cabaña de Tarzán - Arucas, Gran Canaria. Todos los derechos reservados.
         </p>
-        <p data-es="Ubicación:la clava,36 Arucas,las palmas | 628 59 22 78| laclava36@gmail.com"
-            data-en="Location: la clava,36 Arucas,las palmas | 628 59 22 78 | laclava36@gmail.com"
+        <p data-es="Ubicación:la calva,36 Arucas,las palmas | 628 59 22 78| laclava36@gmail.com"
+            data-en="Location: la calva,36 Arucas,las palmas | 628 59 22 78 | laclava36@gmail.com"
             data-fr="Emplacement :la clava,36 Arucas,las palmas | 628 59 22 78 | laclava36@gmail.com">
-            Ubicación: la clava,36 Arucas,las palmas | 628 59 22 78| laclava36@gmail.com</p>
+            Ubicación: la calva,36 Arucas,las palmas | 628 59 22 78| lacalva36@gmail.com</p>
     </footer>
     <script>
-        
+
         // Toggle selector de idiomas
         function toggleIdiomas() {
             document.getElementById("listaIdiomas").classList.toggle("oculto");
@@ -277,7 +306,7 @@ Notre objectif est que vous vous sentiez bien dès votre arrivée, en vous offra
                 const fechaEntrada = new Date(entrada.value);
                 const fechaSalida = new Date(salida.value);
                 const diferencia = (fechaSalida - fechaEntrada) / (1000 * 60 * 60 * 24);
-                
+
                 if (diferencia > 0) {
                     const total = diferencia * 50;
                     precioTotal.textContent = `${total} €`;
@@ -291,7 +320,7 @@ Notre objectif est que vous vous sentiez bien dès votre arrivée, en vous offra
         salida.addEventListener('change', calcularPrecio);
 
         // Cerrar selector de idiomas al hacer clic fuera
-        document.addEventListener('click', function(event) {
+        document.addEventListener('click', function (event) {
             const selector = document.querySelector('.selector-idioma');
             if (!selector.contains(event.target)) {
                 document.getElementById("listaIdiomas").classList.add("oculto");
@@ -311,7 +340,7 @@ Notre objectif est que vous vous sentiez bien dès votre arrivée, en vous offra
             document.body.appendChild(script);
         }
     </script>
-    </script>
+
 
 </body>
 
